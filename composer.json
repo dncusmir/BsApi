@@ -1,0 +1,11 @@
+{
+    "name": "dncusmir/bsapi",
+    "description": "a wrapper for BrawlStars api",
+    "authors": [
+        {
+            "name": "dncusmir",
+            "email": "dzanza@yahoo.com"
+        }
+    ],
+    "require": {}
+}
