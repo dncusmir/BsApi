@@ -18,7 +18,7 @@ jobs:
           extensions: json
       
       - name: install composer
-        run: composer install --dev
+        run: composer install
 
       - name: run tests
         run: ./vendor/bin/phpunit
