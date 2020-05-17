@@ -86,11 +86,10 @@ class BsApi extends AbstractApi
      */
     public function getPlayerInformation(string $playerTag): array
     {
-        /** @var \Psr\Http\Message\ResponseInterface */
-        $response = $this->fetchResponse('GET', 'players/' . $playerTag, $this->headers);
+        $response = $this->fetchResponse('GET', 'players/' . rawurlencode($playerTag), $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -111,10 +110,10 @@ class BsApi extends AbstractApi
      */
     public function getPlayerBattleLog(string $playerTag): array
     {
-        $response = $this->fetchResponse('GET', 'players/' . $playerTag . '/battlelog', $this->headers);
+        $response = $this->fetchResponse('GET', 'players/' . rawurlencode($playerTag) . '/battlelog', $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -135,10 +134,10 @@ class BsApi extends AbstractApi
      */
     public function getClubInformation(string $clubTag): array
     {
-        $response = $this->fetchResponse('GET', 'clubs/' . $clubTag, $this->headers);
+        $response = $this->fetchResponse('GET', 'clubs/' . rawurlencode($clubTag), $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -159,10 +158,10 @@ class BsApi extends AbstractApi
      */
     public function getClubMembers(string $clubTag): array
     {
-        $response = $this->fetchResponse('GET', 'clubs/' . $clubTag . '/members', $this->headers);
+        $response = $this->fetchResponse('GET', 'clubs/' . rawurlencode($clubTag) . '/members', $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -186,7 +185,7 @@ class BsApi extends AbstractApi
         $response = $this->fetchResponse('GET', 'rankings/' . $countryCode . '/players', $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -210,7 +209,7 @@ class BsApi extends AbstractApi
         $response = $this->fetchResponse('GET', 'rankings/' . $countryCode . '/clubs', $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -238,7 +237,7 @@ class BsApi extends AbstractApi
         );
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -260,7 +259,7 @@ class BsApi extends AbstractApi
         $response = $this->fetchResponse('GET', 'brawlers', $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
@@ -284,7 +283,7 @@ class BsApi extends AbstractApi
         $response = $this->fetchResponse('GET', 'brawler/' . $brawlerId, $this->headers);
 
         if (200 !== $response->getStatusCode()) {
-            throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
+            throw new ResponseException($response->getStatusCode() . ' - '. $response->getReasonPhrase());
         }
 
         return json_decode((string) $response->getBody(), true);
