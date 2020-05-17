@@ -1,0 +1,32 @@
+name: CI-CD
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test-php:
+    name: test PHP
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.2
+          extensions: json
+      
+      - name: install composer
+        run: composer install --dev
+
+      - name: run tests
+        run: ./vendor/bin/phpunit
+
+      - name: check code with ecs
+        run: ./vendor/bin/ecs check src
+
+      - name: psalm check
+        run: ./vendor/bin/psalm --shepherd
