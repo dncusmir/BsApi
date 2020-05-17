@@ -80,9 +80,12 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getPlayerInformation(string $playerTag): array
-    {   
+    {
         /** @var \Psr\Http\Message\ResponseInterface */
         $response = $this->fetchResponse('GET', 'players/' . $playerTag, $this->headers);
 
@@ -90,10 +93,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -105,6 +105,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getPlayerBattleLog(string $playerTag): array
     {
@@ -114,10 +117,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -129,6 +129,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getClubInformation(string $clubTag): array
     {
@@ -138,10 +141,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -153,6 +153,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getClubMembers(string $clubTag): array
     {
@@ -162,10 +165,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -177,6 +177,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getPlayerRankings(string $countryCode): array
     {
@@ -186,10 +189,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -201,6 +201,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getClubRankings(string $countryCode): array
     {
@@ -210,10 +213,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -225,6 +225,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getBrawlerRankings(string $countryCode, string $brawlerId): array
     {
@@ -238,10 +241,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -251,6 +251,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getBrawlers(): array
     {
@@ -260,10 +263,7 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 
     /**
@@ -275,6 +275,9 @@ class BsApi extends AbstractApi
      * @return array
      *
      * @throws \Dncusmir\BsApi\Exceptions\ResponseException
+     *
+     * @psalm-suppress MixedInferredReturnType
+     * @psalm-suppress MixedReturnStatement
      */
     public function getBrawlerInformation(string $brawlerId): array
     {
@@ -284,9 +287,6 @@ class BsApi extends AbstractApi
             throw new ResponseException($response->getStatusCode(). $response->getReasonPhrase());
         }
 
-        /** @var array */
-        $data = json_decode((string) $response->getBody(), true);
-
-        return $data;
+        return json_decode((string) $response->getBody(), true);
     }
 }

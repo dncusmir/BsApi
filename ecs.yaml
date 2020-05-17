@@ -126,3 +126,5 @@ parameters:
         PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer: ~
         # daca apare typehint in fct lasam si n docblock
         PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer: ~
+        # docblock transformat in comment
+        PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer: ~
