@@ -1,3 +1,3 @@
 # BrawStars Api PHP
 
-A wrapper around [BrawStars Api](https://developer.brawlstars.com/#/)
+A PHP client to use [BrawStars Api](https://developer.brawlstars.com/#/)
