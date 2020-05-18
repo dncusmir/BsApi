@@ -1,5 +1,11 @@
 # BrawStars Api PHP
 
+![CI-CD](https://github.com/dncusmir/BsApi/workflows/CI-CD/badge.svg)
+![](https://shepherd.dev/github/dncusmir/BsApi/coverage.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Total Downloads](https://poser.pugx.org/dncusmir/bsapi/downloads)](//packagist.org/packages/dncusmir/bsapi)
+[![Stable release](https://poser.pugx.org/dncusmir/bsapi/version.svg)](https://packagist.org/packages/dncusmir/bsapi)
+
 A PHP client to use [BrawStars Api](https://developer.brawlstars.com/#/) implementing [PSR-7](https://www.php-fig.org/psr/psr-7/), [PSR-17](https://www.php-fig.org/psr/psr-17/) and [PSR-18](https://www.php-fig.org/psr/psr-18/).
 
 ## Instalation
